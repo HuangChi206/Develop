@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.hc.spring6.di.object.Student">
+        <property name="id" value="2000"/>
+        <property name="name" value="小明"/>
+        <property name="teacherMap">
+            <map>
+                <entry key="100" value-ref="teacher1"/>
+                <entry key="200" value-ref="teacher2"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="teacher1" class="com.hc.spring6.di.object.Teacher">
+        <property name="id" value="100"/>
+        <property name="name" value="张三"/>
+    </bean>
+    <bean id="teacher2" class="com.hc.spring6.di.object.Teacher">
+        <property name="id" value="200"/>
+        <property name="name" value="李四"/>
+    </bean>
+</beans>

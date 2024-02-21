@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 外部引用 -->
+    <bean id="dept" class="com.hc.spring6.di.object.Dept">
+        <property name="name" value="研发部"/>
+    </bean>
+    <bean id="emp" class="com.hc.spring6.di.object.Emp">
+        <property name="name" value="张三"/>
+        <property name="age" value="18"/>
+        <!-- ref属性：引用IOC容器中某个bean的id，将所对应的bean为属性赋值 -->
+        <property name="dept" ref="dept"/>
+    </bean>
+
+    <!-- 内部bean -->
+    <bean id="emp1" class="com.hc.spring6.di.object.Emp">
+        <property name="name" value="李四"/>
+        <property name="age" value="20"/>
+        <property name="dept">
+            <bean class="com.hc.spring6.di.object.Dept">
+                <property name="name" value="安保部"/>
+            </bean>
+        </property>
+    </bean>
+</beans>

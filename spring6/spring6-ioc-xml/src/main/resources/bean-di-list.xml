@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="dept" class="com.hc.spring6.di.object.Dept">
+        <property name="name" value="研发部"/>
+        <property name="empList">
+            <list>
+                <ref bean="emp"/>
+                <ref bean="emp1"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="emp" class="com.hc.spring6.di.object.Emp">
+        <property name="name" value="坤坤"/>
+        <property name="age" value="18"/>
+        <!-- ref属性：引用IOC容器中某个bean的id，将所对应的bean为属性赋值 -->
+        <!--<property name="dept" ref="dept"/>-->
+        <property name="hobby">
+            <array>
+                <value>唱跳</value>
+                <value>Rap</value>
+                <value>篮球</value>
+            </array>
+        </property>
+    </bean>
+    <bean id="emp1" class="com.hc.spring6.di.object.Emp">
+        <property name="name" value="李四"/>
+        <property name="age" value="20"/>
+        <!--<property name="dept" ref="dept"/>-->
+        <property name="hobby">
+            <null/>
+        </property>
+    </bean>
+</beans>

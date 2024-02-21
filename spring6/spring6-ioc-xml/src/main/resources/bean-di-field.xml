@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1.set方法注入 -->
+    <bean id="book1" class="com.hc.spring6.di.field.Book">
+        <!-- property标签：通过setXxx()方法设置对象属性 -->
+        <!-- name：指定属性名 (getXxx()、setXxx()方法定义的，和成员变量无关)  -->
+        <!-- value：指定属性值 -->
+        <property name="title" value="Effective Java"/>
+        <property name="author" value="Joshua Bloch"/>
+    </bean>
+
+    <!-- 2.构造器注入 -->
+    <bean id="book2" class="com.hc.spring6.di.field.Book">
+        <!-- constructor-arg标签：通过构造器设置对象属性 -->
+        <!-- name：指定参数名 -->
+        <!-- value：指定属性值 -->
+        <constructor-arg name="title" value="Effective Java"/>
+        <constructor-arg name="author" value="Joshua Bloch"/>
+
+        <!--空值-->
+        <constructor-arg name="other">
+            <null/>
+        </constructor-arg>
+    </bean>
+</beans>

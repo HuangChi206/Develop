@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 使用init-method属性指定初始化方法 -->
+    <!-- 使用destroy-method属性指定销毁方法 -->
+    <bean id="user" class="com.hc.spring6.di.lifecycle.User"
+          init-method="init" destroy-method="destroy">
+        <property name="id" value="100"/>
+        <property name="name" value="小明"/>
+    </bean>
+
+    <!-- 将bean的后置处理器注入IOC容器 -->
+    <bean id="beanPost" class="com.hc.spring6.di.lifecycle.BeanPost"/>
+</beans>
