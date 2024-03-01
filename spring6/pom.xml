@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring6-ioc-xml</module>
+        <module>spring6-ioc-annotation</module>
     </modules>
 
     <properties>
@@ -63,5 +64,10 @@
             <artifactId>druid</artifactId>
         </dependency>
 
+        <!-- javax.annotation -->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+        </dependency>
     </dependencies>
 </project>
